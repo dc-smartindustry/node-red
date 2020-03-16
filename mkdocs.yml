@@ -1,2 +1,7 @@
 site_name: Node-Red
 theme: readthedocs
+nav:
+    - Home: README.md
+    - installatie.md
+    - docker-run.md
+    - weerstation.md
