@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docker starten - Node-Red</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker starten";
+    var mkdocs_page_input_path = "docker-run.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Node-Red</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker starten</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#power-shell">Power Shell</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#beheer-van-gebruikers-data">Beheer van gebruikers data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#een-data-volume-aanmaken">Een data volume aanmaken</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installatie/">Installatie</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Node-Red</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Docker starten</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="docker-starten">Docker starten</h1>
+<h2 id="power-shell">Power Shell</h2>
+<p>Het is aan te bevelen om voor de commando's hieronder de Windows Power Shell te gebruiken. Je start deze als administrator door in het zoekveld van Windows (windows toets en dan beginnen te typen) Power Shell in te typen. Naast het menu krijg je nu de optie om "Power Shell" te starten als administrator. Dit geeft je wat meer rechten waardoor je de installatie commando's mag uitvoeren.</p>
+<p><img alt="" src="../local-install/powershell-start.png" /></p>
+<p>Om een Node-Red server te starten kun je Docker gebruiken is de meest simpele vorm:</p>
+<p>Wacht nog even met het uitvoeren dit komt later.</p>
+<pre><code class="powershell">docker run -it -p 1880:1880 --name mynodered nodered/node-red
+</code></pre>
+
+<p>Het commando bestaat uit de volgende elementen:</p>
+<pre><code class="powershell">docker run              - Het starten van de container. Deze wordt lokaal opgebouwd                                 indien nodig    
+-it                     - Koppel een terminal venster zodat we kunnen zien wat er                                   gebeurt.
+-p 1880:1880            - Verbind de lokale poort 1880 met de interne poort 1880
+--name mynodered        - geef deze machine een lokale vriendelijke naam
+nodered/node-red        - het image waarop deze machine gebasseerd is.
+</code></pre>
+
+<h2 id="beheer-van-gebruikers-data">Beheer van gebruikers data</h2>
+<p>Standaard werkt Docker zo, dat als je de container weer stopt, dat deze terugvalt in zijn oorspronkelijke staat. De wijzigingen die je maakt, gaan dus verloren. Dit is heel handig als je wat uit wilt proberen, maar natuurlijk minder handig als je later verder wilt werken. </p>
+<p>Om je wijzigingen op te slaan en deze permanent te maken moet je een opslag locatie koppelen aan je container. Node -Red gebruikt de <code>/data</code> directory als opslag voor de gebruikers data zoals de flows die je later aan gaat maken.</p>
+<h3 id="een-data-volume-aanmaken">Een data volume aanmaken</h3>
+<p>Een <code>named volume</code> buiten de container zorgt voor permanente oplag. Hierdoor blijft deze data beschikbaar ook nadat de container is gestopt.</p>
+<p>Je maakt een nieuw volume door de volgende command's uit te voeren:</p>
+<pre><code class="powershell">$ docker volume create --name node_red_user_data
+$ docker volume ls
+DRIVER              VOLUME NAME
+local               node_red_user_data
+</code></pre>
+
+<p>Je start de Node-Red server nu door het volgende commado uit te voeren:</p>
+<pre><code class="powershell">$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+</code></pre>
+
+<p>Na het commando zal het image van Node-Red eerst gedownload worden. Daarna wordt het image opgebouwd zodat het gestart wordt op je machine.</p>
+<pre><code>Welcome to Node-RED
+===================
+
+16 Mar 14:29:17 - [info] Node-RED version: v1.0.4
+16 Mar 14:29:17 - [info] Node.js  version: v10.19.0
+16 Mar 14:29:17 - [info] Linux 4.19.76-linuxkit x64 LE
+16 Mar 14:29:18 - [info] Loading palette nodes
+16 Mar 14:29:18 - [info] Settings file  : /data/settings.js
+16 Mar 14:29:18 - [info] Context store  : 'default' [module=memory]
+16 Mar 14:29:18 - [info] User directory : /data
+16 Mar 14:29:18 - [warn] Projects disabled : editorTheme.projects.enabled=false
+16 Mar 14:29:18 - [info] Flows file     : /data/flows.json
+16 Mar 14:29:18 - [info] Creating new flow file
+16 Mar 14:29:18 - [warn]
+
+---------------------------------------------------------------------
+
+Your flow credentials file is encrypted using a system-generated key.
+
+If the system-generated key is lost for any reason, your credentials
+file will not be recoverable, you will have to delete it and re-enter
+your credentials.
+
+You should set your own key using the 'credentialSecret' option in
+your settings file. Node-RED will then re-encrypt your credentials
+
+file using your chosen key the next time you deploy a change.
+---------------------------------------------------------------------
+
+16 Mar 14:29:18 - [info] Server now running at http://127.0.0.1:1880/
+16 Mar 14:29:18 - [info] Starting flows
+16 Mar 14:29:18 - [info] Started flows
+</code></pre>
+
+<p>Zoals je ziet is de Node-Red server gestart. Er draait nu een Linux systeem op je Windows PC en daarbinnen is Node-Red gestart.  Het Power Shell venster moet je open laten staan. Deze is gekoppeld aan de server.
+Als je Docker Desktop hebt geinstalleerd volgens de eerdere instructies dan zie je in het dachboard ook de server staan.</p>
+<p><img alt="" src="../node-red/docker-dektop-start.png" /></p>
+<p><img alt="" src="../node-red/docker-node-red-running.png" /></p>
+<p>De volgende commando's kun je hier aanklikken als je met je muis over de server gaat:</p>
+<ul>
+<li>Openen in de browser</li>
+<li>Open de command line voor deze server</li>
+<li>Stop de server</li>
+<li>Opnieuw opstarten van de server</li>
+<li>Verwijder deze server</li>
+</ul>
+<p>Klik op het eerste icoon achter de server naam of ga met je browser nu naar het volgende adres":</p>
+<p>http://127.0.0.1:1880/</p>
+<p>Hier vindt je de webpagina van Node-Red en deze is momenteel nog geheel blanco.</p>
+<p><img alt="" src="../node-red/node-red-blank.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../installatie/" class="btn btn-neutral float-right" title="Installatie">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../installatie/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
