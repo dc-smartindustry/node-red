@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Weerstation - Node-Red</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Weerstation";
+    var mkdocs_page_input_path = "weerstation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Node-Red</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../README.md">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installatie/">Installatie</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker-run/">Docker starten</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Weerstation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installatie-van-de-extra-blokken">Installatie van de extra blokken</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#weerdata-inlezen-van-buienradar">Weerdata inlezen van Buienradar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#je-eerste-flow-activeren">Je eerste Flow activeren</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dashboard">DashBoard</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Node-Red</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Weerstation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="weerstation">Weerstation</h1>
+<p>In dit hoofdstuk gaan we een dashboard maken met de weerdata van Buien Radar. </p>
+<h2 id="installatie-van-de-extra-blokken">Installatie van de extra blokken</h2>
+<p>Als je de voorgaande stappen goed hebt doorlopen moet je nu in het dashboard van Node-Red zitten en zie je onderstaand scherm met een blanco flow:</p>
+<p><img alt="" src="../node-red/node-red-blank.png" /></p>
+<p>In Node-Red kun je doormiddel van bouwblokken verschillende functies aan elkeer knopen. Dit heet een <code>flow</code> en de eerste lege <code>flow</code> zie je hierboven.</p>
+<p>De blokken links kun je in de flow slepen en daarna kun je hier weer andere functie aan vast maken.</p>
+<p>Voordat we verder gaan, moeten we eerst nog wat extra installeren. Momenteel ontbreken namelijk de bouwblokken van Buienradar en ook de blokken van het dashboard zijn nog niet aan wezig.</p>
+<p>Ga eerst naar de rechterbovenhoek van je scherm en klik daar op de drie horizontale lijnen <img alt="" src="node-red-menu.png" /> en daarna op <code>Manage pallet</code> </p>
+<p><img alt="" src="node-red-add-pallet.png" /></p>
+<p>Je krijgt nu het volgende scherm:</p>
+<p><img alt="" src="node-red-install-dashboard.png" /></p>
+<p>Ga naar het tabblad <code>Install</code> en vul daarna in het zoekveld de term <code>dashboard</code> in.</p>
+<p>Je ziet nu de <code>node-red-dashboard</code>module in de lijst. Klik op <code>install</code> om de module te installeren.</p>
+<p>Je moet vervolgens bevestigen dat je de module echt wilt installeren. Klik op <code>Install</code></p>
+<p><img alt="" src="node-red-dashboard-confirm.png" /></p>
+<p>Nu we toch in dit schrem zitten, installeren we direct de Buienradar plugin. </p>
+<p>Doe dit op de zelfde manier. De Buien Radar plugin heet <code>node-red-contrib-buienradar</code></p>
+<p><img alt="" src="node-red-install-buienradar.png" /></p>
+<p>Dit scherm kun je nu sluiten.</p>
+<p>Als het goed is zijn de volgende blokken nu zichtbaar in de linkerbalk:</p>
+<p><img alt="" src="node-red-dashboard-blocks.png" /></p>
+<p><img alt="" src="node-red-block-weather.png" /></p>
+<p>Nu zijn alle blokken goed geinstalleerd en kunnen we onze eerste <code>flow</code> maken.</p>
+<h2 id="weerdata-inlezen-van-buienradar">Weerdata inlezen van Buienradar</h2>
+<p>Sleep nu het Buienradar block naar het raster in het midden van het scherm</p>
+<p><img alt="" src="node-red-add-weather-block.gif" /></p>
+<p>Sleep nu een <code>debug block</code> naast het <code>Buienradar block</code> <img alt="" src="node-red-debug-block.png" /></p>
+<p>Zodra je het debug block neerzet zal dit veranderen in een <code>msg.payload block</code></p>
+<p><img alt="" src="node-red-debug.png" /></p>
+<p>Zoals je ziet heeft het Buienradar Block aan beide zieden een klein grijs vlakje staan. Deze viekanten zijn de connectoren van een block. Aan de linkerkant vindt je de ingangen, aan de rechtekant de uitgangen.</p>
+<p>Deze vlakken kunnen worden gebruikt om twee of meerdere blokken aan elkaar te verbinden.</p>
+<p>Maak nu de connectie tussen de uitgang van het <code>Buitenradar block</code> en de ingang van het <code>debug</code> of <code>msg.payload block</code>.</p>
+<p><img alt="" src="node-red-connect-blocks.gif" /></p>
+<p>De blokken zijn nu verboden en je kunt nu het Buienradar block gaan instellen. Dubbelklik op het Buienradar block. Nu krijg je onderstaand configuratie scherm.</p>
+<p><img alt="" src="node-red-config-buienradar.png" /></p>
+<p>Verander het Station naar de dischtsbijzijnde locatie en set een interval om de hoeveel minuten je de data zou willen ophalen. Voor deze workshop is 1 keer per minuut voldoende. Klik daarna op <code>Done</code>.</p>
+<h2 id="je-eerste-flow-activeren">Je eerste Flow activeren</h2>
+<p>De flow die je nu hebt gemaakt is nog niet actief. Daarvoor moet je de server de opdracht geven om de huidige flow te activeren. Dit doe je door in de rechterbovenhoek op <img alt="" src="node-red-deploy-button.png" /> te klikken.</p>
+<p>De server zal de flow nu activeren en beginnen met de uitvoer.</p>
+<p>Om te bekijken wat voor data het Buienradar block nu inleest en in welk formaat die aan de uitgangs kant beschikbaar is, moeten we bekijken wat er in het debug block binnen komt. Alle input van de debug blokken in de flow komen binnen op de debug console. Je opent deze door op het <code>"bug"</code> symbool te drukken in de rechter bovenhoek<img alt="" src="node-red-debug-button.png" /> .</p>
+<p>Je krijgt nu alle debug berichten te zien. Klik op het pijltje om het bericht verder te bekijken.</p>
+<p><img alt="" src="node-red-debug-screen.png" /></p>
+<p>Je krijgt nu alle info te zien die het Buienradar block heeft binnen gekregen.</p>
+<p><img alt="" src="node-red-buienradar-debug.png" /></p>
+<p>Je selecteerd temperatuurGC en kopieerd het pad door op het <code>&gt;_</code> icoon te drukken.</p>
+<p><img alt="" src="node-red-debug-copy-path.png" /></p>
+<p>Hiermee kopieer je de link naar dit specifieke object.</p>
+<p>We gaan nu zorgen dat deze data uit het gehele bericht wordt gefilterd. Dit doe je door een <img alt="" src="node-red-change-block.png" />naar je flow te slepen onder het <code>debug block</code>. Ook dit block veranderd weer van naam naar <code>set.msg.payload</code></p>
+<p>Verbind de uitgang van Buienradar met dit nieuwe block. Je krijgt dan het onderstaande.</p>
+<p><img alt="" src="node-red-change-flow.png" /></p>
+<p>Door te dubbel klikken op dit nieuwe block krijg je de eigenschappen weer te zien.</p>
+<p><img alt="" src="node-red-config-change-temperature.png" /></p>
+<p>Geef nu als naam op <code>Temperatuur</code> en verander het to: veld naar <code>msg.</code> en plak hier het eerder gekopieerde path van het debug scherm. Je plakt als het goed is nu de tekst: <code>payload.buienradar.temperatuurGC</code></p>
+<p>Nu is dit deel klaar.</p>
+<p>We gaan nu een meter plaatsen voor het dashboard.</p>
+<h2 id="dashboard">DashBoard</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../docker-run/" class="btn btn-neutral" title="Docker starten"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../docker-run/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
