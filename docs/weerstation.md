@@ -224,6 +224,19 @@ Je dashboard ziet er nu zo uit:
 
 ------
 
+## Weergave veranderen
+
+Je kunt ook spelen met het type meter dat op je dashboard staat. Via de instellingen van de![](weerstation/node-red-gauge-block.png)kun je deze naar bijvoorbeeld een donut zetten. Hiermee krijg je een ander uiterlijk.
+
+![](weerstation/node-red-luchtvochtigheid-donut.png)
+
+![](weerstation/node-red-dashboard-gauge-donut.png)
+
 ## Extra
 
-Voel je vrij om ook de andere data van Buienradar toe te voegen. Je kunt zelf kiezen in welke vorm dit het beste tot zijn recht komt.
+Voel je vrij om ook de andere data van Buienradar toe te voegen. Je kunt zelf kiezen in welke vorm dit het beste tot zijn recht komt. Probeer te spelen met meerdere groepen op het dashboard en verschillende soorten meters. Zoek op [wikipedia](https://nl.wikipedia.org/) op wat de meet bereiken zijn van de verschillende waardes. Zo kan een meter bijvoorbeeld ook op een andere waarde beginnen dan op 0 zoals bijvoorbeeld bij de luchtdruk deze zal altijd een minimale waarde hebben en ook nooit boven een bepaalde waarde uitkomen. 
+De temperatuur in ditvoorbeeld begint bijvoorbeeld op 0 maar het kan natuurlijk ook vriezen.
+
+Een voorbeeld vindt je hieronder.
+
+![](weerstation/node-red-dashboard-example.png)
