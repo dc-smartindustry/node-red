@@ -8,3 +8,4 @@ Deze workshop is onderdeel van de opleiding Smart Industry van het Drenthe Colle
 
 Meer info op https:www.drenthecollege.nl
 
+![](daag-jezelf-uit-handtekening.jpg)
