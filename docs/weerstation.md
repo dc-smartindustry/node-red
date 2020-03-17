@@ -157,7 +157,7 @@ Druk hierna op `Add` om deze actie toe te voegen.
 Je komt hierna in het configuratie scherm van de `Gauge` 
 
 
-![](weerstation/node-red-edit-gauge.png)
+![](weerstation/node-red-temperature-configure.png)
 
 Vul de overige gegevens in zodat de juiste labels zichtbaar worden in je dashboard.
 
