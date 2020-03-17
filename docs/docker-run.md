@@ -18,9 +18,9 @@ docker run -it -p 1880:1880 --name mynodered nodered/node-red
 
 Het commando bestaat uit de volgende elementen:
 
-```powershell
-docker run              - Het starten van de container. Deze wordt lokaal opgebouwd 								indien nodig	
--it                     - Koppel een terminal venster zodat we kunnen zien wat er 									gebeurt.
+```
+docker run              - Het starten van de container. Deze wordt lokaal opgebouwd indien nodig	
+-it                     - Koppel een terminal venster zodat we kunnen zien wat ergebeurt.
 -p 1880:1880            - Verbind de lokale poort 1880 met de interne poort 1880
 --name mynodered        - geef deze machine een lokale vriendelijke naam
 nodered/node-red        - het image waarop deze machine gebasseerd is.
