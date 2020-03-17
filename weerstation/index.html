@@ -68,7 +68,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#je-eerste-flow-activeren">Je eerste Flow activeren</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#dashboard">DashBoard</a>
+    <li class="toctree-l2"><a class="reference internal" href="#dashboard">Dashboard</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#luchtvochtigheid-toevoegen">Luchtvochtigheid toevoegen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#toevoegen-weer-tekst">Toevoegen weer tekst</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extra">Extra</a>
     </li>
     </ul>
                     </li>
@@ -121,36 +127,36 @@
 <p>Je ziet nu de <code>node-red-dashboard</code>module in de lijst. Klik op <code>install</code> om de module te installeren.</p>
 <p>Je moet vervolgens bevestigen dat je de module echt wilt installeren. Klik op <code>Install</code></p>
 <p><img alt="" src="node-red-dashboard-confirm.png" /></p>
-<p>Nu we toch in dit schrem zitten, installeren we direct de Buienradar plugin. </p>
+<p>Nu we toch in dit scherm zitten, installeren we direct de Buienradar plugin. </p>
 <p>Doe dit op de zelfde manier. De Buien Radar plugin heet <code>node-red-contrib-buienradar</code></p>
 <p><img alt="" src="node-red-install-buienradar.png" /></p>
 <p>Dit scherm kun je nu sluiten.</p>
-<p>Als het goed is zijn de volgende blokken nu zichtbaar in de linkerbalk:</p>
+<p>Als het goed is zijn de volgende blokken nu zichtbaar in de linker balk:</p>
 <p><img alt="" src="node-red-dashboard-blocks.png" /></p>
 <p><img alt="" src="node-red-block-weather.png" /></p>
-<p>Nu zijn alle blokken goed geinstalleerd en kunnen we onze eerste <code>flow</code> maken.</p>
+<p>Nu zijn alle blokken goed geïnstalleerd en kunnen we onze eerste <code>flow</code> maken.</p>
 <h2 id="weerdata-inlezen-van-buienradar">Weerdata inlezen van Buienradar</h2>
 <p>Sleep nu het Buienradar block naar het raster in het midden van het scherm</p>
 <p><img alt="" src="node-red-add-weather-block.gif" /></p>
 <p>Sleep nu een <code>debug block</code> naast het <code>Buienradar block</code> <img alt="" src="node-red-debug-block.png" /></p>
 <p>Zodra je het debug block neerzet zal dit veranderen in een <code>msg.payload block</code></p>
 <p><img alt="" src="node-red-debug.png" /></p>
-<p>Zoals je ziet heeft het Buienradar Block aan beide zieden een klein grijs vlakje staan. Deze viekanten zijn de connectoren van een block. Aan de linkerkant vindt je de ingangen, aan de rechtekant de uitgangen.</p>
+<p>Zoals je ziet heeft het Buienradar Block aan beide zieden een klein grijs vlakje staan. Deze vierkanten zijn de connectoren van een block. Aan de linkerkant vindt je de ingangen, aan de rechterkant de uitgangen.</p>
 <p>Deze vlakken kunnen worden gebruikt om twee of meerdere blokken aan elkaar te verbinden.</p>
 <p>Maak nu de connectie tussen de uitgang van het <code>Buitenradar block</code> en de ingang van het <code>debug</code> of <code>msg.payload block</code>.</p>
 <p><img alt="" src="node-red-connect-blocks.gif" /></p>
 <p>De blokken zijn nu verboden en je kunt nu het Buienradar block gaan instellen. Dubbelklik op het Buienradar block. Nu krijg je onderstaand configuratie scherm.</p>
 <p><img alt="" src="node-red-config-buienradar.png" /></p>
-<p>Verander het Station naar de dischtsbijzijnde locatie en set een interval om de hoeveel minuten je de data zou willen ophalen. Voor deze workshop is 1 keer per minuut voldoende. Klik daarna op <code>Done</code>.</p>
+<p>Verander het Station naar de dichtstbijzijnde locatie en set een interval om de hoeveel minuten je de data zou willen ophalen. Voor deze workshop is 1 keer per minuut voldoende. Klik daarna op <code>Done</code>.</p>
 <h2 id="je-eerste-flow-activeren">Je eerste Flow activeren</h2>
 <p>De flow die je nu hebt gemaakt is nog niet actief. Daarvoor moet je de server de opdracht geven om de huidige flow te activeren. Dit doe je door in de rechterbovenhoek op <img alt="" src="node-red-deploy-button.png" /> te klikken.</p>
 <p>De server zal de flow nu activeren en beginnen met de uitvoer.</p>
-<p>Om te bekijken wat voor data het Buienradar block nu inleest en in welk formaat die aan de uitgangs kant beschikbaar is, moeten we bekijken wat er in het debug block binnen komt. Alle input van de debug blokken in de flow komen binnen op de debug console. Je opent deze door op het <code>"bug"</code> symbool te drukken in de rechter bovenhoek<img alt="" src="node-red-debug-button.png" /> .</p>
+<p>Om te bekijken wat voor data het Buienradar block nu inleest en in welk formaat die aan de uitgangskant beschikbaar is, moeten we bekijken wat er in het debug block binnen komt. Alle input van de debug blokken in de flow komen binnen op de debug console. Je opent deze door op het <code>"bug"</code> symbool te drukken in de rechter bovenhoek<img alt="" src="node-red-debug-button.png" /> .</p>
 <p>Je krijgt nu alle debug berichten te zien. Klik op het pijltje om het bericht verder te bekijken.</p>
 <p><img alt="" src="node-red-debug-screen.png" /></p>
 <p>Je krijgt nu alle info te zien die het Buienradar block heeft binnen gekregen.</p>
 <p><img alt="" src="node-red-buienradar-debug.png" /></p>
-<p>Je selecteerd temperatuurGC en kopieerd het pad door op het <code>&gt;_</code> icoon te drukken.</p>
+<p>Je selecteert temperatuurGC en kopieert het pad door op het <code>&gt;_</code> icoon te drukken.</p>
 <p><img alt="" src="node-red-debug-copy-path.png" /></p>
 <p>Hiermee kopieer je de link naar dit specifieke object.</p>
 <p>We gaan nu zorgen dat deze data uit het gehele bericht wordt gefilterd. Dit doe je door een <img alt="" src="node-red-change-block.png" />naar je flow te slepen onder het <code>debug block</code>. Ook dit block veranderd weer van naam naar <code>set.msg.payload</code></p>
@@ -158,10 +164,65 @@
 <p><img alt="" src="node-red-change-flow.png" /></p>
 <p>Door te dubbel klikken op dit nieuwe block krijg je de eigenschappen weer te zien.</p>
 <p><img alt="" src="node-red-config-change-temperature.png" /></p>
-<p>Geef nu als naam op <code>Temperatuur</code> en verander het to: veld naar <code>msg.</code> en plak hier het eerder gekopieerde path van het debug scherm. Je plakt als het goed is nu de tekst: <code>payload.buienradar.temperatuurGC</code></p>
+<p>Geef nu als naam op <code>Temperatuur</code> en verander het <code>to</code>: veld naar <code>msg.</code> en plak hier het eerder gekopieerde <code>path</code> van het debug scherm. Je plakt als het goed is nu de tekst: <code>payload.buienradar.temperatuurGC</code></p>
+<p>Als je nu een debug block achter het change blok zet, dan kun je in het debug venster zien of de temperatuur overeenkomt. </p>
+<p>Je krijgt dan de volgende flow</p>
+<p><img alt="" src="node-red-temp-debug.png" /></p>
+<p>Als je weer op deploy drukt dan krijg je in het debug venster het volgende</p>
+<p><img alt="" src="node-red-debug-temp-list.png" /></p>
+<p>Als dit overeenkomt werkt het zoals bedoeld. Je kunt nu het debug blok achter de <code>change</code> functie verwijderen door het te selecteren en dan op <code>delete</code> te drukken</p>
+<p>Zo niet, dan zit er ergens nog iets fout. Loop dan de instructies nog even na. Wellicht heb je het verkeerde <code>path</code> geselecteerd vanuit de lijst met waardes in het debug venster. </p>
 <p>Nu is dit deel klaar.</p>
 <p>We gaan nu een meter plaatsen voor het dashboard.</p>
-<h2 id="dashboard">DashBoard</h2>
+<h2 id="dashboard">Dashboard</h2>
+<p>Bij de dashboard blokken heb je verschillende manieren om de data te visualiseren. We selecteren voor de temperatuur het <img alt="" src="node-red-gauge-block.png" />blok</p>
+<p>Sleep dit naast het temperatuur blok en verbind de twee.</p>
+<p><img alt="" src="node-red-gauge-connected.png" /></p>
+<p>Je configureert het blok nu als volgt</p>
+<p><img alt="" src="node-red-edit-gauge.png" /></p>
+<p>Als eerste moet je een <code>Group</code> toevoegen. Klik hiervoor op <img alt="" src="node-red-pencil-icon.png" title="Pencil Icon" />achter het <code>Group</code> veld.</p>
+<p>Je krijgt nu onderstaande dialoog</p>
+<p><img alt="" src="node-red-add-group.png" /></p>
+<p>Geef hier een naam voor de <code>group</code> en maak ook een nieuw tabblad aan. Je krijgt dan het volgende scherm</p>
+<p><img alt="" src="node-red-add-dashboard.png" /></p>
+<p>Druk hierna op <code>Add</code> om deze actie toe te voegen. </p>
+<p>Je komt hierna in het configuratie scherm van de <code>Gauge</code> </p>
+<p><img alt="" src="node-red-edit-gauge.png" /></p>
+<p>Vul de overige gegevens in zodat de juiste labels zichtbaar worden in je dashboard.</p>
+<p>Klik hierna op <code>Done</code> en je komt weer in je flow scherm. Klik nu op <code>Deploy</code> zodat je flow actief wordt.</p>
+<p>Als alles goed is gegaan en je hebt geen fouten, dan kun je het dashboard bereiken door rechtsboven in je scherm op het <img alt="" src="node-red-dashboard-icon.png" title="Dashboard Icon" />icon te klikken. Mocht deze niet zichtbaar zijn dan kun je meer opties zichtbaar maken via het pijltje aan de zijkant.</p>
+<p><img alt="" src="node-red-access-dashboard.png" /></p>
+<p>Je ziet nu het volgende scherm</p>
+<p><img alt="" src="node-red-dashboard-panel.png" /></p>
+<p>Je opent het dashboard nu door op het icoon naast de tabbladen te klikken <img alt="" src="node-red-open-site-icon.png" title="Open Site" /></p>
+<p>Je dashboard ziet er nu ongeveer zo uit:</p>
+<p><img alt="" src="node-red-dashboard-temp.png" /></p>
+<p>Zoals je ziet is er momenteel maar 1 tabblad <code>1</code>. Deze heeft de titel zoals eerder ingegeven. 
+Ook zie je bij <code>2</code> een groep waar de meter van de temperatuur in zit. De labels zoals je die eerder hebt aangegeven zijn zichtbaar. Je kunt meerdere meters groeperen door middel van een <code>group</code> en verschillende soorten data op meerdere tabbladen zichtbaar maken.</p>
+<h2 id="luchtvochtigheid-toevoegen">Luchtvochtigheid toevoegen</h2>
+<p>Probeer nu zelf de luchtvochtigheid toe te voegen op dezelfde manier als de temperatuur.</p>
+<p>Je moet nu iets krijgen dat lijkt op onderstaande afbeelding.</p>
+<p><img alt="" src="node-red-add-luchtvochtigheid.png" /></p>
+<p>Na een <code>deploy</code> ziet je dashboard er zo uit:</p>
+<p><img alt="" src="node-red-dashboard-humidity.png" /></p>
+<p>Je ziet dat zonder dat je je scherm ververst, het dashboard veranderd na een <code>deploy</code>. De weerdata wordt nu elke minuut ingelezen en automatisch ververst.</p>
+<h2 id="toevoegen-weer-tekst">Toevoegen weer tekst</h2>
+<p>Op de zelfde manier voeg je nu <code>icoonzin</code> data van buienradar toe aan een text block <img alt="" src="node-red-text-block.png" /></p>
+<p><img alt="" src="node-red-buienradar-icoonzin.png" /></p>
+<p>Je flow ziet er nu zo uit:</p>
+<p><img alt="" src="node-red-add-icoontekst.png" /></p>
+<p>Je dashboard ziet er nu zo uit:</p>
+<p><img alt="" src="node-red-dashboard-all-unsorted.png" /></p>
+<p>Zoals je ziet is de volgorde willekeurig en staat het tekst blok nu tussen de meters, wat de leesbaarheid niet vergroot.</p>
+<p>We zullen nu de volgorde aanpassen. Ga naar het dashboard gedeelte aan de rechterkant en klap de data uit met de pijlen aan de linker kant van de labels.</p>
+<p><img alt="" src="node-red-dashboard-view-unsorted.png" /></p>
+<p>Door de volgorde te slepen kun je een iets logischere indeling maken</p>
+<p><img alt="" src="node-red-dashboard-panel-sorted.png" /></p>
+<p>Je dashboard ziet er nu zo uit:</p>
+<p><img alt="" src="node-red-dashboard-all-sorted.png" /> </p>
+<hr />
+<h2 id="extra">Extra</h2>
+<p>Voel je vrij om ook de andere data van Buienradar toe te voegen. Je kunt zelf kiezen in welke vorm dit het beste tot zijn recht komt.</p>
               
             </div>
           </div>
