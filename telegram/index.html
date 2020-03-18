@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Local install - Node-Red</title>
+  <title>Telegram communicatie - Node-Red</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Local install";
-    var mkdocs_page_input_path = "local-install.md";
+    var mkdocs_page_name = "Telegram communicatie";
+    var mkdocs_page_input_path = "telegram.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -94,7 +94,7 @@
     
       
     
-    <li>Local install</li>
+    <li>Telegram communicatie</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -105,16 +105,25 @@
           <div role="main">
             <div class="section">
               
-                <p>Als dit gelukt is kun je onderstaande instructies verder overslaan.</p>
-<h2 id="lokale-installatie">Lokale installatie</h2>
-<p>Mocht je computer te weinig geheugen hebben om Docker te draaien dan kan een lokale installatie uitkomst bieden. De onderstaande instructies gaan uit van Windows. Heb je een anders besturingssysteem of bijvoorbeeld een Raspberry Pi, dan kun je de instructies van de Node-Red website gebruiken: </p>
-<p><a href="https://nodered.org/docs/getting-started/">https://nodered.org/docs/getting-started/</a></p>
-<p>Het is aan te bevelen om voor de commando's hieronder de Windows Power Shell te gebruiken. Je start deze als administrator door in het zoekveld van Windows (windows toets en dan beginnen te typen) Power Shell in te typen. Naast het menu krijg je nu de optie om "Power Shell" te starten als administrator. Dit geeft je wat meer rechten waardoor je de installatie commando's mag uitvoeren.</p>
-<p><img alt="" src="powershell-start.png" /></p>
-<h3 id="nodejs-installeren">Node.js installeren</h3>
-<p>Je kunt de laatste versie van node.js installeren van de officiele website van node.js, https://nodejs.org/en/. Kies op deze pagina voor de LTS versie. Dit is de meest stabiele versie en voldoende voor node-red.</p>
-<p>LTS staat voor <strong>L</strong>ong <strong>T</strong>erm <strong>S</strong>upport.</p>
-<p>Zorg dat je de installatie uitvoert met lokale administrator rechten. </p>
+                <h1 id="telegram-communicatie">Telegram communicatie</h1>
+<p>Om met de buiten wereld te communiceren kunnen we onze flow uitberiden met communicatie via Telegram. Met deze applicatie kun je op je desktop, ios of android communiceren met je Node-Red flow.</p>
+<h2 id="installatie-telegram">Installatie telegram</h2>
+<p>Allereerst moeten we net als in het vorige deel, eerst de blokken toevoegen om met telegram te kunnen communiceren. Ga naar de instellingen (<img alt="" src="../weerstation/node-red-menu.png" /> In de rechter bovenhoek) en open <code>Manage Palette</code>.</p>
+<p>Zoek nu naar telegram en installeer <code>node-red-contrib-chatbot</code></p>
+<p><img alt="" src="telegram-install-pallet.png" /></p>
+<h2 id="botfather">@BotFather</h2>
+<p>De volgende stap is het creeren van een Telegram bot. Je kunt dit op je telefoon doen, maar nog handiger is om de desktop app te installeren. Hiermee kun je dan straks gemakkelijk de api-key kopieren die je nodig hebt voor de activatie.</p>
+<p>Start een nieuwe chat door te zoeken naar <code>@BotFather</code></p>
+<p><img alt="" src="telegram-botfather-start.png" /></p>
+<p>Type nu in het berichten veld de tekst <code>/newbot</code></p>
+<p>Bedenk hierna een naam voor je nieuwe bot. Bijvoorbeeld node-red-buienradar. </p>
+<p><img alt="" src="telegram-botfather-name.png" /></p>
+<p>Hierna vraagt de bot om een gebruikers naam. Deze naam moet uniek zijn, dus het kan zijn dat je enkele varianten moet proberen. Ook moet de naam eindigen op "bot". Dus bijvoorbeeld buienradarBot (maar die was al bezet zoals je kunt zien)</p>
+<p><img alt="" src="telegram-botfather-username.png" /></p>
+<p>Je krijgt nu ook de API key terug. Bewaar deze goed, aangezien we die nodig hebben voor onze flow.</p>
+<p>Een handig commando om de instellingen aan te passen is de volgende:</p>
+<p><code>/mybots</code>   Geeft een lijst met opties om ze makkelijk aan te passen. Waaronder het veranderen van de naam en het verwijderen als je klaar bent met deze workshop. In de volgende stap gaan we de bot verbinden met de flow in Node-Red</p>
+<h2 id="telegram-flow">Telegram flow</h2>
               
             </div>
           </div>
