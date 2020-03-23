@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Local install - Node-Red</title>
+  <title>Docker installatie - Node-Red</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Local install";
-    var mkdocs_page_input_path = "local-install.md";
+    var mkdocs_page_name = "Docker installatie";
+    var mkdocs_page_input_path = "docker-install.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -62,10 +62,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Installatie</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../installatie/">Installatie</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../docker-install/">Docker installatie</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker installatie</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#docker-desktop">Docker Desktop</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker-toolbox">Docker Toolbox</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../docker-run/">Docker starten</a>
                     </li>
@@ -97,8 +103,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Installatie &raquo;</li>
+        
+      
     
-    <li>Local install</li>
+    <li>Docker installatie</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -109,20 +119,42 @@
           <div role="main">
             <div class="section">
               
-                <p>Als dit gelukt is kun je onderstaande instructies verder overslaan.</p>
-<h2 id="lokale-installatie">Lokale installatie</h2>
-<p>Mocht je computer te weinig geheugen hebben om Docker te draaien dan kan een lokale installatie uitkomst bieden. De onderstaande instructies gaan uit van Windows. Heb je een anders besturingssysteem of bijvoorbeeld een Raspberry Pi, dan kun je de instructies van de Node-Red website gebruiken: </p>
-<p><a href="https://nodered.org/docs/getting-started/">https://nodered.org/docs/getting-started/</a></p>
-<p>Het is aan te bevelen om voor de commando's hieronder de Windows Power Shell te gebruiken. Je start deze als administrator door in het zoekveld van Windows (windows toets en dan beginnen te typen) Power Shell in te typen. Naast het menu krijg je nu de optie om "Power Shell" te starten als administrator. Dit geeft je wat meer rechten waardoor je de installatie commando's mag uitvoeren.</p>
-<p><img alt="" src="powershell-start.png" /></p>
-<h3 id="nodejs-installeren">Node.js installeren</h3>
-<p>Je kunt de laatste versie van node.js installeren van de officiele website van node.js, https://nodejs.org/en/. Kies op deze pagina voor de LTS versie. Dit is de meest stabiele versie en voldoende voor node-red.</p>
-<p>LTS staat voor <strong>L</strong>ong <strong>T</strong>erm <strong>S</strong>upport.</p>
-<p>Zorg dat je de installatie uitvoert met lokale administrator rechten. </p>
+                <h1 id="docker-installatie">Docker installatie</h1>
+<p>Installeer als eerste Docker zelf.</p>
+<p>Ga hiervoor naar <a href="https://www.docker.com/">https://www.docker.com/</a> en klik op "Get Started"</p>
+<p><img alt="" src="get-started.png" /></p>
+<p>Selecteer hier voor welk systeem je Docker wilt installeren en klik op "Get Docker"</p>
+<p><img alt="" src="get-docker.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Windows Versie</p>
+<p>Als je een  Microsoft Windows 10 Professional of Enterprise 64-bit versie hebt kies je voor <a href="#docker-desktop">Docker Desktop</a> Anders moet je <a href="#docker-toolbox">Docker Toolbox</a> installeren.</p>
+</div>
+<h2 id="docker-desktop">Docker Desktop</h2>
+<p>Als de download klaar is kun je het programma installeren.</p>
+<p>Kies in het configuratie scherm voor de standaard opties.</p>
+<p><img alt="" src="docker-install-config.png" /></p>
+<p>Nadat de installatie klaar is moet de computer opnieuw worden opgestart. </p>
+<p><img alt="" src="installation-ready.png" /></p>
+<p>Mocht je nog documenten open hebben, dan ik het handig deze eerst op te slaan, voordat je de computer opnieuw opstart.</p>
+<div class="admonition tip">
+<p>Na het opstarten is Docker klaar voor gebruik.</p>
+</div>
+<h2 id="docker-toolbox">Docker Toolbox</h2>
+<p>De instructies voor Docker Toolbox zijn wat uitgebreider en hebben we niet opgenomen in deze handleiding. Deze uitgebreide engelstalige handleiding kun je vinden op de Docker website.</p>
+<p><a href="https://docs.docker.com/toolbox/overview/">https://docs.docker.com/toolbox/overview/</a></p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docker-run/" class="btn btn-neutral float-right" title="Docker starten">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../installatie/" class="btn btn-neutral" title="Installatie"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -146,6 +178,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../installatie/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../docker-run/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
