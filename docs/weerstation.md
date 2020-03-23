@@ -8,7 +8,7 @@ Als je de voorgaande stappen goed hebt doorlopen moet je nu in het dashboard van
 
 ![](node-red/node-red-blank.png)
 
-In Node-Red kun je doormiddel van bouwblokken verschillende functies aan elkeer knopen. Dit heet een `flow` en de eerste lege `flow` zie je hierboven.
+In Node-Red kun je doormiddel van bouwblokken verschillende functies aan elkaar knopen. Dit heet een `flow` en de eerste lege `flow` zie je hierboven.
 
 De blokken links kun je in de flow slepen en daarna kun je hier weer andere functie aan vast maken.
 

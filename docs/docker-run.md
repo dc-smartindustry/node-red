@@ -111,3 +111,7 @@ Hier vindt je de webpagina van Node-Red en deze is momenteel nog geheel blanco.
 
 ![](node-red/node-red-blank.png)
 
+
+
+!!! tip "Volgende"
+	 [Ga verder via deze link](weerstation.md)

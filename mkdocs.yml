@@ -2,8 +2,14 @@ site_name: Node-Red
 site-author: Peter Groen
 google_analytics: ['UA-160983667-1', 'https://dc-smartindustry.github.io/node-red/']
 theme: readthedocs
+markdown_extensions:
+  - admonition
 nav:
     - Home: index.md
-    - installatie.md
-    - docker-run.md
-    - weerstation.md
+    - Installatie:
+        - installatie.md
+        - docker-install.md
+        - docker-run.md
+        - ibm-cloud.md
+    - Node-Red:
+        - weerstation.md
