@@ -13,3 +13,4 @@ nav:
         - ibm-cloud.md
     - Node-Red:
         - weerstation.md
+    - Hulp: help.md
