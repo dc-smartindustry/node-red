@@ -13,7 +13,7 @@ Om dit in een online omgeving te kunnen doen gebruiken we hier de online weer da
 
 Deze workshop is onderdeel van de opleiding Smart Industry van het Drenthe College.
 
-Meer info op [https://www.drenthecollege.nl](https://www.drenthecollege.nl)
+Meer info op [https://www.drenthecollege.nl](https://www.drenthecollege.nl/opleidingen/middenkaderfunctionaris-smart-industry/)
 
 ![](daag-jezelf-uit-handtekening.jpg)
 

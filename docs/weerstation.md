@@ -163,7 +163,8 @@ Vul de overige gegevens in zodat de juiste labels zichtbaar worden in je dashboa
 
 Klik hierna op `Done` en je komt weer in je flow scherm. Klik nu op `Deploy` zodat je flow actief wordt.
 
-Als alles goed is gegaan en je hebt geen fouten, dan kun je het dashboard bereiken door rechtsboven in je scherm op het ![](weerstation/node-red-dashboard-icon.png "Dashboard Icon")icon te klikken. Mocht deze niet zichtbaar zijn dan kun je meer opties zichtbaar maken via het pijltje aan de zijkant.
+!!! tip ""
+	Als alles goed is gegaan en je hebt geen fouten, dan kun je het dashboard bereiken door rechtsboven in je scherm op het ![](weerstation/node-red-dashboard-icon.png "Dashboard Icon") icon te klikken. Mocht deze niet zichtbaar zijn dan kun je meer opties zichtbaar maken via het pijltje aan de zijkant.
 
 ![](weerstation/node-red-access-dashboard.png)
 
@@ -192,7 +193,8 @@ Na een `deploy` ziet je dashboard er zo uit:
 
 ![](weerstation/node-red-dashboard-humidity.png)
 
-Je ziet dat zonder dat je je scherm ververst, het dashboard veranderd na een `deploy`. De weerdata wordt nu elke minuut ingelezen en automatisch ververst.
+!!! note ""
+	Je ziet dat zonder dat je je scherm ververst, het dashboard veranderd na een `deploy`. De weerdata wordt nu elke minuut ingelezen en automatisch ververst.
 
 ## Toevoegen weer tekst
 
