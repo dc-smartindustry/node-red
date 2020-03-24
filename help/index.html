@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Telegram communicatie - Node-Red</title>
+  <title>Hulp - Node-Red</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Telegram communicatie";
-    var mkdocs_page_input_path = "telegram.md";
+    var mkdocs_page_name = "Hulp";
+    var mkdocs_page_input_path = "help.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -77,8 +77,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="../weerstation/">Weerstation</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../help/">Hulp</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Hulp</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -102,7 +104,7 @@
     
       
     
-    <li>Telegram communicatie</li>
+    <li>Hulp</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -113,29 +115,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="telegram-communicatie">Telegram communicatie</h1>
-<p>Om met de buiten wereld te communiceren kunnen we onze flow uitberiden met communicatie via Telegram. Met deze applicatie kun je op je desktop, ios of android communiceren met je Node-Red flow.</p>
-<h2 id="installatie-telegram">Installatie telegram</h2>
-<p>Allereerst moeten we net als in het vorige deel, eerst de blokken toevoegen om met telegram te kunnen communiceren. Ga naar de instellingen (<img alt="" src="../weerstation/node-red-menu.png" /> In de rechter bovenhoek) en open <code>Manage Palette</code>.</p>
-<p>Zoek nu naar telegram en installeer <code>node-red-contrib-chatbot</code></p>
-<p><img alt="" src="telegram-install-pallet.png" /></p>
-<h2 id="botfather">@BotFather</h2>
-<p>De volgende stap is het creeren van een Telegram bot. Je kunt dit op je telefoon doen, maar nog handiger is om de desktop app te installeren. Hiermee kun je dan straks gemakkelijk de api-key kopieren die je nodig hebt voor de activatie.</p>
-<p>Start een nieuwe chat door te zoeken naar <code>@BotFather</code></p>
-<p><img alt="" src="telegram-botfather-start.png" /></p>
-<p>Type nu in het berichten veld de tekst <code>/newbot</code></p>
-<p>Bedenk hierna een naam voor je nieuwe bot. Bijvoorbeeld node-red-buienradar. </p>
-<p><img alt="" src="telegram-botfather-name.png" /></p>
-<p>Hierna vraagt de bot om een gebruikers naam. Deze naam moet uniek zijn, dus het kan zijn dat je enkele varianten moet proberen. Ook moet de naam eindigen op "bot". Dus bijvoorbeeld buienradarBot (maar die was al bezet zoals je kunt zien)</p>
-<p><img alt="" src="telegram-botfather-username.png" /></p>
-<p>Je krijgt nu ook de API key terug. Bewaar deze goed, aangezien we die nodig hebben voor onze flow.</p>
-<p>Een handig commando om de instellingen aan te passen is de volgende:</p>
-<p><code>/mybots</code>   Geeft een lijst met opties om ze makkelijk aan te passen. Waaronder het veranderen van de naam en het verwijderen als je klaar bent met deze workshop. In de volgende stap gaan we de bot verbinden met de flow in Node-Red</p>
-<h2 id="telegram-flow">Telegram flow</h2>
+                <h1 id="hulp">Hulp</h1>
+<p>Als je tegen dingen aan loopt die niet duidelijk zijn in de handleiding, dan hoor ik dit graag. Ook voor algemene feedback over deze workshop kun je altijd contact opnemen.</p>
+<p>Via onderstaand formulier maak je een ticket aan zodat we hier makkelijk op kunnen reageren.</p>
+<p>Probeer het probleem zo goed mogelijk te omschrijven en voeg eventueel een schermafbeelding toe om helder te maken waar het probleem zit.</p>
+<hr />
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+
+<script>
+  hbspt.forms.create({
+    portalId: "7361977",
+    formId: "40398c8a-10b1-47a0-922c-b3c32cb34889"
+});
+</script>
+
+<hr />
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../weerstation/" class="btn btn-neutral" title="Weerstation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -158,6 +163,8 @@
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+      
+        <span><a href="../weerstation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
