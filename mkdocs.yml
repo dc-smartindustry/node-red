@@ -8,9 +8,9 @@ nav:
     - Home: index.md
     - Installatie:
         - installatie.md
+        - ibm-cloud.md
         - docker-install.md
         - docker-run.md
-        - ibm-cloud.md
     - Node-Red:
         - weerstation.md
     - Hulp: help.md

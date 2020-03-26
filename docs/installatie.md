@@ -2,9 +2,7 @@
 
 De installatie van Node-Red kan op meeder manieren. Een lokale installatie op je PC,  een installatie via Docker en het starten van Node-Red op een cloud server van IBM.
 
-
-
-Deze laatste optie heeft de voorkeur aangezien je dan niet afhankelijk bent van de eigenschappen van je eigen PC.
+Installatie via IBM Cloud heeft de voorkeur aangezien je dan niet afhankelijk bent van de eigenschappen van je eigen PC.
 
 ## IBM Cloud
 
