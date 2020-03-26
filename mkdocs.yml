@@ -1,6 +1,6 @@
 site_name: Node-Red
 site-author: Peter Groen
-google_analytics: ['UA-160983667-1', 'https://dc-smartindustry.github.io/node-red/']
+google_analytics: ['UA-160983667-1', 'auto']
 theme: readthedocs
 markdown_extensions:
   - admonition
